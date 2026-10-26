@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1042738242120",
+    "firebase_url": "https://mobile3p-default-rtdb.firebaseio.com",
+    "project_id": "mobile3p",
+    "storage_bucket": "mobile3p.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042738242120:android:e77c852d7c7f3b98462e7d",
+        "android_client_info": {
+          "package_name": "org.ucb.mobile3p"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrGU1eTGmg7j020AFKSTGlWe4B3AICZuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
