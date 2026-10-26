@@ -13,6 +13,7 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room3)
+    alias(libs.plugins.wire)
 }
 
 detekt {
@@ -43,6 +44,17 @@ tasks.register<Detekt>("detektAll") {
     reports {
         html.required.set(true)
         sarif.required.set(true)
+    }
+}
+
+wire {
+    sourcePath {
+        srcDir("src/commonMain/proto")
+    }
+
+    kotlin {
+        rpcRole = "client"
+        rpcCallStyle = "suspending"
     }
 }
 
@@ -107,6 +119,10 @@ kotlin {
             implementation(libs.androidx.room3.runtime)
             implementation(libs.androidx.sqlite.bundled)
             implementation(libs.firebase.database)
+            implementation("dev.gitlive:firebase-firestore:2.7.0")
+            implementation("dev.gitlive:firebase-messaging:2.7.0")
+            implementation(libs.wire.runtime)
+            implementation(libs.wire.grpc.client)
 
         }
         iosMain.dependencies {

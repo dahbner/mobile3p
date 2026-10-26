@@ -14,6 +14,12 @@ import org.ucb.mobile3p.userinformation.domain.repository.GithubRepository
 import org.ucb.mobile3p.exchange.data.datasource.RealTimeDataBase
 import org.ucb.mobile3p.exchange.data.repository.ExchangeRepositoryImpl
 import org.ucb.mobile3p.exchange.domain.repository.ExchangeRepository
+import org.ucb.mobile3p.stores.data.datasource.FirestoreDataSource
+import org.ucb.mobile3p.stores.data.repository.StoresRepositoryImpl
+import org.ucb.mobile3p.stores.domain.repository.StoresRepository
+import org.ucb.mobile3p.notifications.data.datasource.MessagingDataSource
+import org.ucb.mobile3p.notifications.data.repository.NotificationsRepositoryImpl
+import org.ucb.mobile3p.notifications.domain.repository.NotificationsRepository
 
 val dataModule = module {
     single<GithubRemoteDataSource> { GitHubApiService() }
@@ -25,4 +31,8 @@ val dataModule = module {
     single<DollarRepository> { DollarRepositoryImpl(get()) }
     singleOf(::RealTimeDataBase)
     single<ExchangeRepository> { ExchangeRepositoryImpl(get()) }
+    singleOf(::FirestoreDataSource)
+    single<StoresRepository> { StoresRepositoryImpl(get()) }
+    singleOf(::MessagingDataSource)
+    single<NotificationsRepository> { NotificationsRepositoryImpl(get()) }
 }

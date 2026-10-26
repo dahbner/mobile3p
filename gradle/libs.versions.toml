@@ -1,6 +1,6 @@
 [versions]
 agp = "9.0.1"
-android-compileSdk = "36"
+android-compileSdk = "37"
 android-minSdk = "24"
 android-targetSdk = "36"
 androidx-activity = "1.13.0"
@@ -21,6 +21,9 @@ room3 = "3.1.0-alpha01"
 sqlite = "2.7.1"
 firebaseDatabase = "2.7.0"
 googleServices = "4.4.2" # O la última versión estable
+wireGrpcClient = "7.0.3"
+wireRuntime = "7.0.3"
+wire = "7.0.3"
 
 [libraries]
 koin-android = { module = "io.insert-koin:koin-android" }
@@ -56,6 +59,8 @@ androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.re
 # Optional SQLite Wrapper
 androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper", version.ref = "room3" }
 firebase-database = { module = "dev.gitlive:firebase-database", version.ref = "firebaseDatabase" }
+wire-grpc-client = { module = "com.squareup.wire:wire-grpc-client", version.ref = "wireGrpcClient" }
+wire-runtime = { module = "com.squareup.wire:wire-runtime", version.ref = "wireRuntime" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -68,3 +73,4 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 androidx-room3 = { id = "androidx.room3", version.ref = "room3" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+wire = { id = "com.squareup.wire", version.ref="wire"}
