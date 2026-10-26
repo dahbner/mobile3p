@@ -11,6 +11,7 @@ import org.ucb.mobile3p.signin.presentation.viewmodel.LoginViewModel
 import org.ucb.mobile3p.stores.presentation.viewmodel.StoresViewModel
 import org.ucb.mobile3p.translations.presentation.viewmodel.TranslationViewModel
 import org.ucb.mobile3p.userinformation.presentation.viewmodel.UserInformationViewModel
+import org.ucb.mobile3p.tasks.presentation.viewmodel.TasksViewModel
 
 val presentationModule = module {
     viewModelOf(::LoginViewModel)
@@ -22,4 +23,5 @@ val presentationModule = module {
     viewModelOf(::LogsViewModel)           // Fase 11
     viewModelOf(::ContactViewModel)        // Fase 13
     viewModelOf(::TranslationViewModel)    // Fase 15
+    viewModelOf(::TasksViewModel)
 }

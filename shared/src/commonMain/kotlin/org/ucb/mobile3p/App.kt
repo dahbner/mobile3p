@@ -17,33 +17,40 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.ucb.mobile3p.localnotification.presentation.screen.LocalNotificationScreen
 import org.ucb.mobile3p.notifications.presentation.screen.NotificationsScreen
+import org.ucb.mobile3p.tasks.presentation.screen.TasksScreen
 
 @Composable
 @Preview
 fun App(messageId: String? = null) {
     MaterialTheme {
-        // Pantalla que se muestra: "fcm" (E25-6) o "local" (E25-5)
+        // Pantalla que se muestra: "fcm" (E25-6), "local" (E25-5) o "tareas" (E50-2)
         var screen by remember { mutableStateOf("fcm") }
 
         Column(modifier = Modifier.safeContentPadding()) {
             // Botones para cambiar de ejercicio
             Row(modifier = Modifier.padding(16.dp)) {
-                Button(onClick = { screen = "fcm" }) { Text("E25-6 FCM") }
+                Button(onClick = { screen = "fcm" }) { Text("FCM") }
                 Button(onClick = { screen = "local" }, modifier = Modifier.padding(start = 8.dp)) {
-                    Text("E25-5 Local")
+                    Text("Local")
+                }
+                Button(onClick = { screen = "tareas" }, modifier = Modifier.padding(start = 8.dp)) {
+                    Text("Tareas")
                 }
             }
 
-            if (screen == "fcm") {
-                // E25-6: message_id del deep link + token FCM
-                Text(
-                    text = "message_id: ${messageId ?: "(app abierta normal)"}",
-                    modifier = Modifier.padding(16.dp)
-                )
-                NotificationsScreen()
-            } else {
+            when (screen) {
+                "fcm" -> {
+                    // E25-6: message_id del deep link + token FCM
+                    Text(
+                        text = "message_id: ${messageId ?: "(app abierta normal)"}",
+                        modifier = Modifier.padding(16.dp)
+                    )
+                    NotificationsScreen()
+                }
                 // E25-5: botón que dispara la notificación local
-                LocalNotificationScreen()
+                "local" -> LocalNotificationScreen()
+                // E50-2: lista de tareas (Firestore) + contador (Realtime Database)
+                else -> TasksScreen()
             }
         }
     }

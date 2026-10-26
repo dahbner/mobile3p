@@ -33,6 +33,9 @@ import org.ucb.mobile3p.userinformation.data.datasource.GithubRemoteDataSource
 import org.ucb.mobile3p.userinformation.data.repository.GithubRepositoryImpl
 import org.ucb.mobile3p.userinformation.data.service.GitHubApiService
 import org.ucb.mobile3p.userinformation.domain.repository.GithubRepository
+import org.ucb.mobile3p.tasks.data.datasource.TasksFirebaseDataSource
+import org.ucb.mobile3p.tasks.data.repository.TasksRepositoryImpl
+import org.ucb.mobile3p.tasks.domain.repository.TasksRepository
 
 val dataModule = module {
     single<GithubRemoteDataSource> { GitHubApiService() }
@@ -62,4 +65,6 @@ val dataModule = module {
     single<TranslationDao> { get<AppDatabase>().getTranslationDao() }
     singleOf(::TranslationLocalDataSource)
     single<TranslationRepository> { TranslationRepositoryImpl(get(), get()) }
+    singleOf(::TasksFirebaseDataSource)
+    single<TasksRepository> { TasksRepositoryImpl(get()) }
 }
