@@ -24,8 +24,10 @@ class MainActivity : ComponentActivity() {
             }.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
 
+        val messageId = intent.getStringExtra("message_id")
+
         setContent {
-            App()
+            App(messageId)
         }
     }
 }

@@ -17,7 +17,7 @@ fun NotificationsScreen(viewModel: NotificationsViewModel = koinViewModel()) {
     val state = viewModel.state.collectAsState().value
 
     Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
-        Text("Token FCM (mantén presionado para copiar):")
+        Text("Token FCM:")
         SelectionContainer {
             Text(
                 when {
