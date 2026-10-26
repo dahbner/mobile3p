@@ -12,6 +12,10 @@ import org.ucb.mobile3p.stores.domain.usecase.GetStoresUseCase
 import org.ucb.mobile3p.translations.domain.usecase.SyncTranslationsUseCase
 import org.ucb.mobile3p.translations.domain.usecase.TranslateUseCase
 import org.ucb.mobile3p.userinformation.domain.usecase.FindAliasUseCase
+import org.ucb.mobile3p.tasks.domain.usecase.AddTaskUseCase
+import org.ucb.mobile3p.tasks.domain.usecase.ObserveCompletedCountUseCase
+import org.ucb.mobile3p.tasks.domain.usecase.ObserveTasksUseCase
+import org.ucb.mobile3p.tasks.domain.usecase.ToggleTaskUseCase
 
 val domainModule = module {
     singleOf(::AuthenticateUseCase)
@@ -24,4 +28,8 @@ val domainModule = module {
     singleOf(::SaveEventUseCase)          // Fase 14
     singleOf(::SyncTranslationsUseCase)   // Fase 15
     singleOf(::TranslateUseCase)          // Fase 15
+    singleOf(::ObserveTasksUseCase)
+    singleOf(::ObserveCompletedCountUseCase)
+    singleOf(::AddTaskUseCase)
+    singleOf(::ToggleTaskUseCase)
 }
