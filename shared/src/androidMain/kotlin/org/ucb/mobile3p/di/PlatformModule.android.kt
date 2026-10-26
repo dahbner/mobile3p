@@ -7,6 +7,8 @@ import org.ucb.mobile3p.config.getDatabaseBuilder
 
 actual fun platformModule(): Module = module {
     single<AppDatabase> {
-        getDatabaseBuilder(get()).build()
+        getDatabaseBuilder(get())
+            .fallbackToDestructiveMigration(dropAllTables = true)   // desde la Fase 15
+            .build()
     }
 }

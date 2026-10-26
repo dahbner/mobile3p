@@ -26,7 +26,7 @@ fun ExchangeScreen(viewModel: ExchangeViewModel = koinViewModel()) {
         val message = viewModel.message.collectAsState()
         Text(message.value)
         MainButton(stringResource(Res.string.login_title)) {
-            print("Press")
+            viewModel.saveTestEvent()
         }
     }
 

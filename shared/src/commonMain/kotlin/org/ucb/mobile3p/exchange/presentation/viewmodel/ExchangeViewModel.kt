@@ -6,9 +6,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import org.ucb.mobile3p.exchange.domain.usecase.ObserveExchangeUseCase
+import org.ucb.mobile3p.exchange.domain.usecase.SaveEventUseCase
 
 class ExchangeViewModel(
-    val usecase: ObserveExchangeUseCase
+    val usecase: ObserveExchangeUseCase,
+    val saveEventUseCase: SaveEventUseCase
 ): ViewModel() {
 
     private val _message = MutableStateFlow<String>("")
@@ -24,6 +26,12 @@ class ExchangeViewModel(
                 .collect { message ->
                     _message.value = message?:"Test"
                 }
+        }
+    }
+
+    fun saveTestEvent() {
+        viewModelScope.launch {
+            saveEventUseCase.invoke("TEST")
         }
     }
 

@@ -97,6 +97,7 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.androidx.room3.sqlite.wrapper)
+            implementation(libs.androidx.work.runtime.ktx)
             implementation(libs.androidx.core.ktx)
         }
         commonMain.dependencies {
@@ -121,6 +122,7 @@ kotlin {
             implementation(libs.firebase.database)
             implementation("dev.gitlive:firebase-firestore:2.7.0")
             implementation("dev.gitlive:firebase-messaging:2.7.0")
+            implementation("dev.gitlive:firebase-config:2.7.0")
             implementation(libs.wire.runtime)
             implementation(libs.wire.grpc.client)
 
