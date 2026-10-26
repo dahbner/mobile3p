@@ -1,9 +1,6 @@
 rootProject.name = "mobile3p"
 
 pluginManagement {
-    plugins {
-        id("dev.detekt") version "2.0.0-alpha.6"
-    }
     repositories {
         google {
             mavenContent {
@@ -26,7 +23,6 @@ dependencyResolutionManagement {
                 includeGroupAndSubgroups("com.google")
             }
         }
-        mavenLocal()
         mavenCentral()
     }
 }

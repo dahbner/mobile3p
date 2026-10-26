@@ -14,17 +14,8 @@ junit = "4.13.2"
 koin = "4.2.2"
 kotlin = "2.4.10"
 material3 = "1.11.0-alpha07"
-detetk = "2.0.0-alpha.6"
-ktor = "3.4.1"
-ksp = "2.3.6"
-room3 = "3.1.0-alpha01"
-sqlite = "2.7.1"
 firebaseDatabase = "2.7.0"
 googleServices = "4.4.2" # O la última versión estable
-wireGrpcClient = "7.0.3"
-wireRuntime = "7.0.3"
-workRuntimeKtx = "2.11.0"
-wire = "7.0.3"
 
 [libraries]
 koin-android = { module = "io.insert-koin:koin-android" }
@@ -49,21 +40,7 @@ compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMul
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
 
-androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
-
-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
-ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
-ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
-androidx-room3-runtime = { module = "androidx.room3:room3-runtime", version.ref = "room3" }
-androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.ref = "room3" }
-# Optional SQLite Wrapper
-androidx-room3-sqlite-wrapper = { module = "androidx.room3:room3-sqlite-wrapper", version.ref = "room3" }
 firebase-database = { module = "dev.gitlive:firebase-database", version.ref = "firebaseDatabase" }
-wire-grpc-client = { module = "com.squareup.wire:wire-grpc-client", version.ref = "wireGrpcClient" }
-wire-runtime = { module = "com.squareup.wire:wire-runtime", version.ref = "wireRuntime" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -71,9 +48,5 @@ androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library",
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-detekt = { id = "dev.detekt", version.ref = "detetk"}
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-androidx-room3 = { id = "androidx.room3", version.ref = "room3" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
-wire = { id = "com.squareup.wire", version.ref="wire"}
